@@ -13,7 +13,10 @@
 <div class="col-lg-12">
 <div class="panel panel-default">
 <div class="panel-heading"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>
-<a href="<?php echo base_url();?>dashboard_teknisi/teknisi_view" style="text-decoration:none">REPORT TEKNISI <a href="<?php echo base_url();?>dashboard_teknisi/pdfreportteknisi/<?php echo $id_teknisi;?>" class="btn btn-danger" target="_blank">Pdf</a></a></div>
+<a href="<?php echo base_url();?>dashboard_teknisi/teknisi_view" style="text-decoration:none">REPORT TEKNISI 
+<a href="<?php echo base_url();?>dashboard_teknisi/pdfreportteknisi/<?php echo $id_teknisi;?>" class="btn btn-danger" target="_blank">Cetak Laporan</a>
+</a>
+</div>
 <div class="panel-body">
 
 

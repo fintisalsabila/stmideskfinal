@@ -2,7 +2,7 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Unit</li>
+				<li class="active">Prodi</li>
 			</ol>
 		</div><!--/.row-->
 		
@@ -13,7 +13,7 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>
-<a href="#" style="list-group-item active">Tambah Data Unit</a></div>
+<a href="#" style="list-group-item active">Tambah Data Prodi</a></div>
 					<div class="panel-body">
 						
 					<div class="col-md-6">
@@ -22,7 +22,7 @@
 					<input type="hidden" class="form-control" name="id_dept" value="<?php echo $id_departemen;?>">
 
 					<div class="form-group">
-						<label>Nama Unit</label>
+						<label>Nama Prodi</label>
 						<input class="form-control" name="nama_dept" placeholder="Nama Departemen" value="<?php echo $nama_departemen;?>" required>
 					</div>
 

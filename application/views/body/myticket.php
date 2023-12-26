@@ -12,8 +12,8 @@
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
-			<div class="panel-heading"><svg class="glyph stroked bag">
-					<use xlink:href="#stroked-bag" />
+			<div class="panel-heading"><svg class="glyph stroked open letter">
+						<use xlink:href="#stroked-open-letter" />
 				</svg>
 				<a href="#" style="text-decoration:none">List Tiket</a> <br><br>
 				<a href="<?php echo base_url(); ?>myticket/pdfmyticket" class="btn btn-danger" target="_blank">Cetak laporan</a>

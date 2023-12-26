@@ -48,8 +48,8 @@
 						         	<?php if($row->status == 1)
 						         	{?>
 						         	<td>
-<a class="ubah btn btn-success btn-xs" href="<?php echo base_url();?>approval/approval_yes/<?php echo $row->id_ticket;?>"><span class="glyphicon glyphicon-thumbs-up" ></span></a>
-<a title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="<?php echo base_url();?>approval/approval_no/<?php echo $row->id_ticket;?>"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+<a class="ubah btn btn-success btn-xs" href="<?php echo base_url();?>approval/approval_yes/<?php echo $row->id_ticket;?>"><span class="glyphicon glyphicon-thumbs-up" ></span> Terima</a>
+<a title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="<?php echo base_url();?>approval/approval_no/<?php echo $row->id_ticket;?>"><span class="glyphicon glyphicon-thumbs-down"></span> Tolak</a>
 </td>
 <?php } else if($row->status == 2) {?>
 <td>

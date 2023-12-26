@@ -30,8 +30,8 @@
 						        <td data-field="no" width="10px"><?php echo $no;?></td>
 						        <td data-field="id"><?php echo $row->nama_jabatan;?></td>
 						         <td> 
-<a class="ubah btn btn-primary btn-xs" href="<?php echo base_url();?>jabatan/edit/<?php echo $row->id_jabatan;?>"><span class="glyphicon glyphicon-edit" ></span></a>
-<a data-toggle="modal"  title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->id_jabatan;?>"><span class="glyphicon glyphicon-trash"></span></a>
+<a class="ubah btn btn-primary btn-xs" href="<?php echo base_url();?>jabatan/edit/<?php echo $row->id_jabatan;?>"><span class="glyphicon glyphicon-edit" ></span> Ubah</a>
+<a data-toggle="modal"  title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->id_jabatan;?>"><span class="glyphicon glyphicon-trash"></span> Hapus</a>
 </td>
 
 						    </tr>

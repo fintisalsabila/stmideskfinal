@@ -43,8 +43,8 @@
                                     ?>
                                     </td>
                                     <td>
-                                        <a class="ubah btn btn-primary btn-xs" href="<?php echo base_url(); ?>barang/edit/<?php echo $row->id_barang; ?>"><span class="glyphicon glyphicon-edit"></span></a>
-                                        <a data-toggle="modal" title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->id_barang; ?>"><span class="glyphicon glyphicon-trash"></span></a>
+                                        <a class="ubah btn btn-primary btn-xs" href="<?php echo base_url(); ?>barang/edit/<?php echo $row->id_barang; ?>"><span class="glyphicon glyphicon-edit"></span> Ubah</a>
+                                        <a data-toggle="modal" title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->id_barang; ?>"><span class="glyphicon glyphicon-trash"></span> Hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

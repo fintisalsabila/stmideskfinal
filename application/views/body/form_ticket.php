@@ -127,15 +127,15 @@
 						<textarea name="problem_detail" class="form-control" rows="3"><?php echo $problem_detail;?></textarea>
 					    </div>
 
-						<div class="form-group">
+						<!--div class="form-group"
                                 <label>Unggah Gambar</label>
                                 <input type="file" name="gambar" accept="image/*">
                             </div>
 
-                            <!-- Preview gambar -->
+                            
                             <img id="output" src="#" alt="Preview" style="max-width: 40%; height: auto; display: none;">
 
-				        </div>
+				        </div>-->
 						
 					</div>
 				</div>

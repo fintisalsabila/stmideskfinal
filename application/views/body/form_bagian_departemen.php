@@ -13,7 +13,7 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-app-window"/></svg>
-<a href="#" style="text-decoration:none">Tambah Data Bagian Unit</a></div>
+<a href="#" style="text-decoration:none">Tambah Data Bagian Prodi</a></div>
 					<div class="panel-body">
 						
 					<div class="col-md-6">
@@ -22,12 +22,12 @@
 					<input type="hidden" class="form-control" name="id_bagian_dept" value="<?php echo $id_bagian_dept;?>">
 
 					<div class="form-group">
-						<label>Nama Bagian Unit</label>
+						<label>Nama Bagian Prodi</label>
 						<input class="form-control" name="nama_bagian_dept" value="<?php echo $nama_bagian_dept;?>" placeholder="Nama Bagian Departemen" required>
 					</div>
 
 					<div class="form-group">
-						<label>Nama Unit</label>
+						<label>Nama Prodi</label>
 						<?php echo form_dropdown('id_departemen',$dd_departemen, $id_departemen, 'class="form-control"');?>
 					</div>
 

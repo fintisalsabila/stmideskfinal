@@ -33,8 +33,8 @@
 						        <td data-field="id_dept"><?php echo $row->nama_kategori;?></td>
 						        <td data-field="nama_bagian_dept"><?php echo $row->nama_sub_kategori;?></td>
 						        <td> 
-<a class="ubah btn btn-primary btn-xs" href="<?php echo base_url();?>sub_kategori/edit/<?php echo $row->id_sub_kategori;?>"><span class="glyphicon glyphicon-edit" ></span></a>
-<a data-toggle="modal"  title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->id_sub_kategori;?>"><span class="glyphicon glyphicon-trash"></span></a>
+<a class="ubah btn btn-primary btn-xs" href="<?php echo base_url();?>sub_kategori/edit/<?php echo $row->id_sub_kategori;?>"><span class="glyphicon glyphicon-edit" ></span> Ubah</a>
+<a data-toggle="modal"  title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->id_sub_kategori;?>"><span class="glyphicon glyphicon-trash"></span> Hapus</a>
 </td>
 						    </tr>
 						    <?php endforeach;?>

@@ -44,8 +44,8 @@
 						        <td data-field="id_bagian_dept"><?php echo $row->nama_bagian_dept;?></td>
 						        <td data-field="nama_jabatan"><?php echo $row->nama_jabatan;?></td>
 						        <td> 
-<a class="ubah btn btn-primary btn-xs" href="<?php echo base_url();?>karyawan/edit/<?php echo $row->nip;?>"><span class="glyphicon glyphicon-edit" ></span></a>
-<a data-toggle="modal"  title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->nip;?>"><span class="glyphicon glyphicon-trash"></span></a>
+<a class="ubah btn btn-primary btn-xs" href="<?php echo base_url();?>karyawan/edit/<?php echo $row->nip;?>"><span class="glyphicon glyphicon-edit" ></span> Ubah</a>
+<a data-toggle="modal"  title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->nip;?>"><span class="glyphicon glyphicon-trash"></span> Hapus</a>
 </td>
 						    </tr>
 						    <?php endforeach;?>

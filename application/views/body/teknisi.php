@@ -22,7 +22,7 @@
 						    <thead>
 						    <tr>
 						        <th data-field="no" data-sortable="true" width="10px">No</th>
-						        <th data-field="id" data-sortable="true">Id</th>
+						        <th data-field="id" data-sortable="true">ID</th>
 						        <th data-field="nama" data-sortable="true">Nama</th>
 							    <th data-field="jenis_kelamin" data-sortable="true">Jenis Kelamin</th>
 						        <th data-field="departemen" data-sortable="true">Spesialis</th>
@@ -42,8 +42,8 @@
 						        <td data-field="id_bagian_dept"><?php echo $row->status;?></td>
 						        <td data-field="nama_jabatan"><?php echo $row->point;?></td>
 						        <td> 
-<a class="ubah btn btn-primary btn-xs" href="<?php echo base_url();?>teknisi/edit/<?php echo $row->id_teknisi;?>"><span class="glyphicon glyphicon-edit" ></span></a>
-<a data-toggle="modal"  title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->id_teknisi;?>"><span class="glyphicon glyphicon-trash"></span></a>
+<a class="ubah btn btn-primary btn-xs" href="<?php echo base_url();?>teknisi/edit/<?php echo $row->id_teknisi;?>"><span class="glyphicon glyphicon-edit" ></span> Ubah</a>
+<a data-toggle="modal"  title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->id_teknisi;?>"><span class="glyphicon glyphicon-trash"></span> Hapus</a>
 </td>
 						    </tr>
 						    <?php endforeach;?>

@@ -2,7 +2,7 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Unit</li>
+				<li class="active">Prodi</li>
 			</ol>
 		</div><!--/.row-->
 		
@@ -13,13 +13,13 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-app-window"/></svg>
-<a href="<?php echo base_url();?>departemen/add" style="list-group-item active">Tambah Data Unit</a></div>
+<a href="<?php echo base_url();?>departemen/add" style="list-group-item active">Tambah Data Prodi</a></div>
 					<div class="panel-body">
 						<table data-toggle="table" data-show-refresh="false" data-show-toggle="true" data-show-columns="true" data-search="true"  data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						    <thead>
 						    <tr>
 						        <th data-field="no" data-sortable="true" width="10px"> No</th>
-						        <th data-field="id" data-sortable="true">Unit</th>
+						        <th data-field="id" data-sortable="true">Prodi</th>
 						        <th>Aksi</th>
 						    </tr>
                             </thead>
@@ -29,8 +29,8 @@
 						        <td data-field="no" width="10px"><?php echo $no;?></td>
 						        <td data-field="id"><?php echo $row->nama_dept;?></td>
 						        <td> 
-<a class="ubah btn btn-primary btn-xs" href="<?php echo base_url();?>departemen/edit/<?php echo $row->id_dept;?>"><span class="glyphicon glyphicon-edit" ></span></a>
-<a data-toggle="modal"  title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->id_dept;?>"><span class="glyphicon glyphicon-trash"></span></a>
+<a class="ubah btn btn-primary btn-xs" href="<?php echo base_url();?>departemen/edit/<?php echo $row->id_dept;?>"><span class="glyphicon glyphicon-edit" ></span> Ubah</a>
+<a data-toggle="modal"  title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="#modKonfirmasi" data-id="<?php echo $row->id_dept;?>"><span class="glyphicon glyphicon-trash"></span> Hapus</a>
 </td>
 						    </tr>
 						    <?php endforeach;?>

@@ -13,15 +13,15 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>
-<a href="<?php echo base_url();?>departemen/add" style="text-decoration:none">List Ticket  <a href="<?php echo base_url();?>list_ticket/pdflistticket" class="btn btn-danger" target="_blank">Pdf</a></a></div>
-					<div class="panel-body">
+<a href="<?php echo base_url();?>departemen/add" style="text-decoration:none">List Ticket <br><br><a href="<?php echo base_url();?>list_ticket/pdflistticket" class="btn btn-danger" target="_blank">Cetak Laporan</a></a></div>
+					<div class="panel-body"><br>
 						<table data-toggle="table" data-show-refresh="false" data-show-toggle="true" data-show-columns="true" data-search="true"  data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						    <thead>
 						    <tr>
 						        <th data-field="no" data-sortable="true" width="10px"> No</th>
-						        <th data-field="idd3" data-sortable="true">Id Ticket</th>
+						        <th data-field="idd3" data-sortable="true">ID Ticket</th>
 						        <th data-field="iddds" data-sortable="true">Reported</th>
-						        <th data-field="idddXs" data-sortable="true">Dept</th>
+						        <th data-field="idddXs" data-sortable="true">Prodi</th>
 						        <th data-field="iddd" data-sortable="true">Tanggal</th>
 						        <th data-field="idddd" data-sortable="true">Nama Kategori</th>
 						        <th data-field="iddddd" data-sortable="true">Nama Sub Kategori</th>
