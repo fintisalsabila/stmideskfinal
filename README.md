@@ -15,9 +15,7 @@ Proyek ini adalah aplikasi web yang dikembangkan oleh kelompok java menggunakan 
 3. **Autentikasi Pengguna:**
     - Sistem login dan registrasi pengguna.
     - Pengaturan profil pengguna dan manajemen kata sandi.
-4. **Notifikasi:**
-    - Pemberitahuan melalui email atau pesan in-app untuk konfirmasi pemesanan dan pengadaan barang.
-5. **Manajemen Admin:**
+4. **Manajemen Admin:**
     - Manajemen pengguna dan peran (admin, pengguna biasa).
     - Pantauan aktivitas pengguna dan laporan penjualan/pengadaan.
 
