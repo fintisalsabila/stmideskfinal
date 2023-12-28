@@ -24,7 +24,7 @@
 					<thead>
 						<tr>
 							<th data-field="no" data-sortable="true" width="10px"> No</th>
-							<th data-field="idd" data-sortable="true">Id Ticket</th>
+							<th data-field="idd" data-sortable="true">ID Ticket</th>
 							<th data-field="iddd" data-sortable="true">Tanggal Ticket</th>
 							<th data-field="idddd" data-sortable="true">Nama Kategori</th>
 							<th data-field="iddddd" data-sortable="true">Nama Sub Kategori</th>
