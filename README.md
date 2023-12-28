@@ -3,6 +3,13 @@
 ## Deskripsi Proyek
 Proyek ini adalah aplikasi web yang dikembangkan oleh kelompok java menggunakan framework CodeIgniter untuk menyediakan layanan e-ticketing dan pengadaan barang. Aplikasi ini dirancang untuk memudahkan pengguna dalam memesan tiket dan melakukan pengadaan barang dengan cara yang efisien dan mudah.
 
+## Kelompok Java
+- 1321056 Lidia Angelica Koswara
+- 1321046 Finti Sasa Sabila
+- 1321052 Aldi Ramadhani
+- 1321054 Novrylianto Zundi Ramadhan
+
+
 ## Fitur Utama
 1. **E-Ticketing:**
     - Pemesanan tiket secara online.
