@@ -418,24 +418,4 @@ class Model_app extends CI_Model
 
         return $value;
     }
-
-    public function tampil($id = null) {
-        $db = $this->db->conn_id; // Assuming $this->db is your CodeIgniter database instance
-    
-        $sql = "SELECT * FROM ticket";
-        
-        if ($id != null) {
-            $sql .= " WHERE id_ticket = $id"; // Fix the syntax error, and concatenate the condition
-        }
-    
-        $query = $db->query($sql);
-    
-        if (!$query) {
-            // Handle the query error, log or return an error message
-            return false;
-        }
-    
-        return $query->result();
-    }
-    
 }

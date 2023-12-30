@@ -103,10 +103,10 @@ function __construct(){
  }
 
 
-
+//FITUR UPLOAD GAMBAR
  public function submit_ticket() {
         // Konfigurasi upload gambar
-        $config['upload_path']   = './uploads/'; // Folder penyimpanan gambar
+        $config['upload_path']   = './assets/uploads/'; // Folder penyimpanan gambar
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
         $config['max_size']      = 2048; // maksimum 2 MB
         $config['encrypt_name']  = TRUE;
@@ -124,7 +124,7 @@ function __construct(){
             $this->ticket_model->insert_ticket($gambar);
 
             // Redirect atau tampilkan halaman sukses
-            redirect('ticket/myticket');
+            redirect('myticket/myticket_list');
         }
     }
  

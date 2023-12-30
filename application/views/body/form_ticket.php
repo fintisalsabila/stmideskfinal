@@ -25,13 +25,13 @@
             loadFile(event);
         });
 
-// Added the following code to handle file uploads
+// Added the following code to handle file uploads (MASIH ERROR)
 $('#uploadForm').submit(function(e) {
         e.preventDefault();
         var formData = new FormData(this);
 
         $.ajax({
-            url: "<?php echo base_url().'ticket/process_form_submission'?>",
+            url: "<?php echo base_url().'myticket/myticket_list'?>",
             type: 'POST',
             data: formData,
             success: function(response) {
@@ -147,8 +147,9 @@ $('#uploadForm').submit(function(e) {
 						<textarea name="problem_detail" class="form-control" rows="3"><?php echo $problem_detail;?></textarea>
 					    </div>
 
+						<!--FITUR UPLOAD GAMBAR-->
 						<div class="form-group">
-						<?php echo form_open_multipart('ticket/submit_ticket'); ?>
+						<?php echo form_open_multipart('myticket/myticket_list'); ?>
 							<label>Unggah Gambar</label>
 							<input type="file" name="gambar" accept="image/*">
 						<?php echo form_close(); ?>
@@ -168,6 +169,4 @@ $('#uploadForm').submit(function(e) {
 					</div>
 				</div>
 			</div>
-		</div><!--/.row-->	
-		
-		
+		</div>

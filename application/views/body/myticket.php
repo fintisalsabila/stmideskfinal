@@ -95,14 +95,15 @@
 									} else if ($row->status == 1) {
 										echo "SEDANG DIAJUKAN KEPADA KEPALA UNIT SETEMPAT";
 									} else {
-										echo "TICKET DITOLAK";
+										echo "TIKET DITOLAK";
 									}
 									?>
 								</td>
+								<!--FITUR UPLOAD GAMBAR-->
 								<td data-field="idcfdddd">
-    <?php echo $data->gambar; ?>
-        <img src="<?php echo base_url('uploads/' . $ticket->gambar); ?>" alt="Ticket Image" width="200">
-</td>
+									<?php echo $data->gambar; ?>
+										<img src="<?php echo base_url('assets/uploads/' . $ticket->gambar); ?>" alt=" Gambar" width="200">
+								</td>
 
 							</tr>
 						<?php endforeach; ?>
@@ -112,7 +113,7 @@
 			</div>
 		</div>
 	</div>
-</div><!--/.row-->
+</div>
 
 <div class="alert bg-warning" role="alert">
 	<svg class="glyph stroked flag">
