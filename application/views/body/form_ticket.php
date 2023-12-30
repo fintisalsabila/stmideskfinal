@@ -25,13 +25,33 @@
             loadFile(event);
         });
 
+// Added the following code to handle file uploads
+$('#uploadForm').submit(function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+
+        $.ajax({
+            url: "<?php echo base_url().'ticket/process_form_submission'?>",
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                console.log(response);
+                // Handle the response as needed
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+
+
 	});
 
 </script>			
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">New Ticket</li>
+				<li class="active">Tiket Baru</li>
 			</ol>
 		</div><!--/.row-->
 		
@@ -127,16 +147,13 @@
 						<textarea name="problem_detail" class="form-control" rows="3"><?php echo $problem_detail;?></textarea>
 					    </div>
 
-						<!--div class="form-group"
-                                <label>Unggah Gambar</label>
-                                <input type="file" name="gambar" accept="image/*">
-                            </div>
-
-                            
-                            <img id="output" src="#" alt="Preview" style="max-width: 40%; height: auto; display: none;">
-
-				        </div>-->
-						
+						<div class="form-group">
+						<?php echo form_open_multipart('ticket/submit_ticket'); ?>
+							<label>Unggah Gambar</label>
+							<input type="file" name="gambar" accept="image/*">
+						<?php echo form_close(); ?>
+						</div>
+						<img id="output" src="#" alt="Preview" style="max-width: 40%; height: auto; display: none;">
 					</div>
 				</div>
 		

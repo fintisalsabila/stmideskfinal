@@ -83,8 +83,8 @@ TANGGAL PROSES : <?php echo $tanggal_proses;?>
   	<th>NO</th>
   	<th>TANGGAL</th>
   	<th>STATUS</th>
-  	<th>DESKRIPISI</th>
-  	<th>BY</th>
+  	<th>DESKRIPSI</th>
+  	<th>OLEH</th>
   </tr>
 
   <?php $no = 0; foreach($data_trackingticket as $row) : $no++;?>

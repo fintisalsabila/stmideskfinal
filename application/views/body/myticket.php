@@ -3,7 +3,7 @@
 		<li><a href="#"><svg class="glyph stroked home">
 					<use xlink:href="#stroked-home"></use>
 				</svg></a></li>
-		<li class="active">My Ticket</li>
+		<li class="active">Tiket Saya</li>
 	</ol>
 </div><!--/.row-->
 
@@ -31,6 +31,7 @@
 							<th data-field="idxddddd" data-sortable="true">Progress</th>
 							<th data-field="idddddd" data-sortable="true">Status</th>
 							<th data-field="iddfdddd" data-sortable="true">Feedback</th>
+							<th data-field="idcfdddd" data-sortable="true">Gambar</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -98,6 +99,11 @@
 									}
 									?>
 								</td>
+								<td data-field="idcfdddd">
+    <?php echo $data->gambar; ?>
+        <img src="<?php echo base_url('uploads/' . $ticket->gambar); ?>" alt="Ticket Image" width="200">
+</td>
+
 							</tr>
 						<?php endforeach; ?>
 					</tbody>

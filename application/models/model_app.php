@@ -8,6 +8,21 @@ class Model_app extends CI_Model
     }
 
     //  ================= AUTOMATIC CODE ==================
+    public function insert_ticket($gambar) {
+        $data = array(
+            'gambar' => $gambar
+            // Tambahkan kolom lain sesuai kebutuhan
+        );
+
+        $this->db->insert('ticket', $data);
+    }
+
+    public function get_tickets() {
+        $query = $this->db->get('ticket');
+        return $query->result();
+    }
+
+
     public function getkodeticket()
     {
         $query = $this->db->query("select max(id_ticket) as max_code FROM ticket");
@@ -403,4 +418,24 @@ class Model_app extends CI_Model
 
         return $value;
     }
+
+    public function tampil($id = null) {
+        $db = $this->db->conn_id; // Assuming $this->db is your CodeIgniter database instance
+    
+        $sql = "SELECT * FROM ticket";
+        
+        if ($id != null) {
+            $sql .= " WHERE id_ticket = $id"; // Fix the syntax error, and concatenate the condition
+        }
+    
+        $query = $db->query($sql);
+    
+        if (!$query) {
+            // Handle the query error, log or return an error message
+            return false;
+        }
+    
+        return $query->result();
+    }
+    
 }

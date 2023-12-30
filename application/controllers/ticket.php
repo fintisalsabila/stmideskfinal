@@ -102,6 +102,36 @@ function __construct(){
 
  }
 
+
+
+ public function submit_ticket() {
+        // Konfigurasi upload gambar
+        $config['upload_path']   = './uploads/'; // Folder penyimpanan gambar
+        $config['allowed_types'] = 'gif|jpg|jpeg|png';
+        $config['max_size']      = 2048; // maksimum 2 MB
+        $config['encrypt_name']  = TRUE;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('gambar')) {
+            $error = array('error' => $this->upload->display_errors());
+            $this->load->view('myticket', $error);
+        } else {
+            $data = $this->upload->data();
+            $gambar = $data['file_name'];
+
+            // Simpan data ke database
+            $this->ticket_model->insert_ticket($gambar);
+
+            // Redirect atau tampilkan halaman sukses
+            redirect('ticket/myticket');
+        }
+    }
+ 
+
+
+
+
  function save()
  {
 
