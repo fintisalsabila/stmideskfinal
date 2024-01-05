@@ -200,7 +200,7 @@ function __construct(){
 
         //end notification
 
-         $sql = "SELECT A.status, A.progress, A.tanggal,  A.tanggal_proses, A.tanggal_solved, F.nama AS nama_teknisi, D.nama, C.id_kategori, A.id_ticket, A.tanggal, B.nama_sub_kategori, C.nama_kategori
+         $sql = "SELECT A.status, A.progress, A.tanggal,  A.tanggal_proses, A.tanggal_solved, A.problem_summary, A.problem_detail, F.nama AS nama_teknisi, D.nama, C.id_kategori, A.id_ticket, A.tanggal, B.nama_sub_kategori, C.nama_kategori
                 FROM ticket A 
                 LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
                 LEFT JOIN kategori C ON C.id_kategori = B.id_kategori 
@@ -222,6 +222,8 @@ function __construct(){
         $data['nama_sub_kategori'] = $row->nama_sub_kategori;
         $data['nama_kategori'] = $row->nama_kategori;
         $data['reported'] = $row->nama;
+        $data['problem_summary'] = $row->problem_summary;
+        $data['problem_detail'] = $row->problem_detail;
         $data['progress'] = $row->progress;
         $data['tanggal_proses'] = $row->tanggal_proses;
         $data['tanggal'] = $row->tanggal;

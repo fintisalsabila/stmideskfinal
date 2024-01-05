@@ -1,25 +1,25 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class profile extends CI_Controller {
+class profile extends CI_Controller
+{
 
-	function __construct(){
+    function __construct()
+    {
         parent::__construct();
         $this->load->model('model_app');
 
-        if(!$this->session->userdata('id_user'))
-       {
-        $this->session->set_flashdata("msg", "<div class='alert alert-info'>
+        if (!$this->session->userdata('id_user')) {
+            $this->session->set_flashdata("msg", "<div class='alert alert-info'>
        <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
        <strong><span class='glyphicon glyphicon-remove-sign'></span></strong> Silahkan login terlebih dahulu.
        </div>");
-        redirect('login');
+            redirect('login');
         }
-        
     }
 
-    
-function view()
+
+    function view()
     {
         $data['header'] = "header/header";
         $data['navbar'] = "navbar/navbar";
@@ -52,11 +52,11 @@ function view()
 
         //end notification
 
-       $id = $this->session->userdata('id_user');
+        $id = $this->session->userdata('id_user');
 
 
-        $sql = 
-        "SELECT A.nip, A.nama, A.alamat, A.jk, B.level, B.level, C.nama_jabatan, D.nama_bagian_dept, E.nama_dept, C.nama_jabatan 
+        $sql =
+            "SELECT A.nip, A.nama, A.alamat, A.jk, B.level, B.level, C.nama_jabatan, D.nama_bagian_dept, E.nama_dept, C.nama_jabatan 
         FROM KARYAWAN A 
         LEFT JOIN user B ON B.username = A.nip 
         LEFT JOIN jabatan C ON C.id_jabatan = A.id_jabatan 
@@ -79,9 +79,71 @@ function view()
 
 
 
-	
+
         $this->load->view('template', $data);
     }
 
-    
+    function change_password()
+    {
+        $data['header'] = "header/header";
+        $data['navbar'] = "navbar/navbar";
+        $data['sidebar'] = "sidebar/sidebar";
+        $data['body'] = "body/change_password";
+
+        $id_dept = trim($this->session->userdata('id_dept'));
+        $id_user = trim($this->session->userdata('id_user'));
+
+        $id = $this->session->userdata('id_user');
+
+
+        $sql =
+            "SELECT A.nip, A.nama, A.alamat, A.jk, B.level, B.level, C.nama_jabatan, D.nama_bagian_dept, E.nama_dept, C.nama_jabatan 
+        FROM KARYAWAN A 
+        LEFT JOIN user B ON B.username = A.nip 
+        LEFT JOIN jabatan C ON C.id_jabatan = A.id_jabatan 
+        LEFT JOIN bagian_departemen D ON D.id_bagian_dept = A.id_bagian_dept 
+        LEFT JOIN departemen E ON E.id_dept = D.id_dept WHERE A.nip ='$id'";
+
+        $row = $this->db->query($sql)->row();
+
+        $data['url'] = "profile/save";
+
+        $this->load->view('template', $data);
+    }
+
+    function save()
+    {
+        $id_user = trim($this->session->userdata('id_user'));
+
+        $pass = trim($this->input->post('pass'));
+        $pass_confirm = trim($this->input->post('pass_confirm'));
+        if($pass != $pass_confirm ) {
+            $this->session->set_flashdata("msg", "<div class='alert bg-danger' role='alert'>
+			    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+			    <svg class='glyph stroked empty-message'><use xlink:href='#stroked-empty-message'></use></svg> Password tidak sama.
+			    </div>");
+            redirect('profile/change_password');
+        }
+
+        $this->db->trans_start();
+
+        $this->db->where('username', $id_user);
+        $this->db->update('user', array("password" => md5($pass_confirm)));
+
+        $this->db->trans_complete();
+
+        if ($this->db->trans_status() === FALSE) {
+            $this->session->set_flashdata("msg", "<div class='alert bg-danger' role='alert'>
+			    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+			    <svg class='glyph stroked empty-message'><use xlink:href='#stroked-empty-message'></use></svg> gagal ubah password.
+			    </div>");
+            redirect('profile/change_password');
+        } else {
+            $this->session->set_flashdata("msg", "<div class='alert bg-success' role='alert'>
+			    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+			    <svg class='glyph stroked empty-message'><use xlink:href='#stroked-empty-message'></use></svg> berhasil ubah password.
+			    </div>");
+            redirect('profile/change_password');
+        }
+    }
 }

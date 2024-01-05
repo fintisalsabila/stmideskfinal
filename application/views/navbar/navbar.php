@@ -25,6 +25,13 @@
                                 </svg> Profile
                             </a>
                         </li>
+                        <li><a href="<?php echo base_url(); ?>profile/change_password">
+                                <svg class="glyph stroked lock">
+                                    <use xlink:href="#stroked-lock"></use>
+                                </svg>
+                                Change Password
+                            </a>
+                        </li>
                         <li><a href="<?php echo base_url(); ?>login/logout">
                                 <svg class="glyph stroked cancel">
                                     <use xlink:href="#stroked-cancel"></use>

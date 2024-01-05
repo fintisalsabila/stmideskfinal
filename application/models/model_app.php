@@ -105,7 +105,7 @@ class Model_app extends CI_Model
     public function datalist_ticket()
     {
 
-        $query = $this->db->query("SELECT D.nama, F.nama_dept, A.status, A.id_ticket, A.tanggal, B.nama_sub_kategori, C.nama_kategori
+        $query = $this->db->query("SELECT D.nama, F.nama_dept, A.status, A.id_ticket, A.tanggal, A.foto, B.nama_sub_kategori, C.nama_kategori
                                    FROM ticket A 
                                    LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
                                    LEFT JOIN kategori C ON C.id_kategori = B.id_kategori
@@ -124,6 +124,13 @@ class Model_app extends CI_Model
                                    LEFT JOIN karyawan B ON B.nip = A.id_user
                                    WHERE A.id_ticket ='$id'");
         return $query->result();
+
+        // $query = $this->db->query("SELECT A.tanggal, A.status, A.deskripsi, B.nama, C.*
+        //                            FROM tracking A 
+        //                            LEFT JOIN karyawan B ON B.nip = A.id_user
+        //                            LEFT JOIN ticket C ON C.id_ticket = A.id_ticket
+        //                            WHERE A.id_ticket ='$id'");
+        return $query->result();
     }
 
 
@@ -139,7 +146,7 @@ class Model_app extends CI_Model
 
     public function datamyticket($id)
     {
-        $query = $this->db->query("SELECT A.progress, A.tanggal_proses, A.tanggal_solved, A.id_teknisi, D.feedback, A.status, A.id_ticket, A.tanggal, B.nama_sub_kategori, C.nama_kategori
+        $query = $this->db->query("SELECT A.progress, A.tanggal_proses, A.tanggal_solved, A.id_teknisi, D.feedback, A.status, A.id_ticket, A.tanggal, A.foto, B.nama_sub_kategori, C.nama_kategori
                                    FROM ticket A 
                                    LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
                                    LEFT JOIN kategori C ON C.id_kategori = B.id_kategori 
@@ -152,7 +159,7 @@ class Model_app extends CI_Model
 
     public function datamyassignment($id)
     {
-        $query = $this->db->query("SELECT A.progress, A.status, A.id_ticket, A.reported, A.tanggal, B.nama_sub_kategori, C.nama_kategori
+        $query = $this->db->query("SELECT A.progress, A.status, A.id_ticket, A.reported, A.tanggal, A.foto, B.nama_sub_kategori, C.nama_kategori
                                    FROM ticket A 
                                    LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
                                    LEFT JOIN kategori C ON C.id_kategori = B.id_kategori

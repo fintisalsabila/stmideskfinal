@@ -101,8 +101,8 @@
 								</td>
 								<!--FITUR UPLOAD GAMBAR-->
 								<td data-field="idcfdddd">
-									<?php echo $data->gambar; ?>
-										<img src="<?php echo base_url('assets/uploads/' . $ticket->gambar); ?>" alt=" Gambar" width="200">
+									<img src="<?php echo base_url('assets/uploads/' . $row->foto); ?>" alt="Tidak ada gambar" width="100">
+									<!-- <?php echo $row->foto; ?> -->
 								</td>
 
 							</tr>

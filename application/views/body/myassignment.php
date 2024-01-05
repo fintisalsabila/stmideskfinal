@@ -26,8 +26,9 @@
 							<th data-field="iddd" data-sortable="true">Tanggal</th>
 							<th data-field="idddd" data-sortable="true">Nama Kategori</th>
 							<th data-field="iddddd" data-sortable="true">Nama Sub Kategori</th>
-							<th data-field="idddddC" data-sortable="true">Progress</th>
-							<th data-field="idddddd" data-sortable="true">Aksi</th>
+							<th data-field="idddddd" data-sortable="true">Progress</th>
+							<th data-field="iddddddC" data-sortable="true">Gambar</th>
+							<th data-field="iddddddd" data-sortable="true">Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -43,9 +44,9 @@
 									} ?>
 								</td>
 								<td data-field="id"><?php echo $row->tanggal; ?></td>
-								<td data-field="id"><?php echo $row->nama_kategori; ?></td>
+								<td data-field="idddd"><?php echo $row->nama_kategori; ?></td>
 								<td data-field="id"><?php echo $row->nama_sub_kategori; ?></td>
-								<td data-field="idddddC">
+								<td data-field="iddddd">
 									<?php
 									if ($row->status == 4) {
 										echo $row->progress; // Tampilkan nilai angka jika status = 4
@@ -62,6 +63,10 @@
 										}
 									}
 									?>
+								</td>
+								<td data-field="idcfdddd">
+									<img src="<?php echo base_url('assets/uploads/' . $row->foto); ?>" alt="Tidak ada gambar" width="100">
+									<!-- <?php echo $row->foto; ?> -->
 								</td>
 								<td data-field="id">
 									<?php

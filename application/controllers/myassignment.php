@@ -164,7 +164,7 @@ function __construct(){
 
         //end notification
 
-        $sql = "SELECT A.progress, A.status, D.nama, C.id_kategori, A.id_ticket, A.tanggal, B.nama_sub_kategori, C.nama_kategori
+        $sql = "SELECT A.progress, A.status, D.nama, C.id_kategori, A.id_ticket, A.tanggal, A.problem_summary, A.problem_detail, B.nama_sub_kategori, C.nama_kategori
                 FROM ticket A 
                 LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
                 LEFT JOIN kategori C ON C.id_kategori = B.id_kategori 
@@ -186,6 +186,12 @@ function __construct(){
         $data['nama_sub_kategori'] = $row->nama_sub_kategori;
         $data['nama_kategori'] = $row->nama_kategori;
         $data['reported'] = $row->nama;
+        $data['problem_summary'] = $row->problem_summary;
+        $data['problem_detail'] = $row->problem_detail;
+
+        //TRACKING TICKET
+        $data_trackingticket = $this->model_app->data_trackingticket($id);
+        $data['data_trackingticket'] = $data_trackingticket;
         
         $this->load->view('template', $data);
 

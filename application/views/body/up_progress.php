@@ -29,9 +29,42 @@
 								<a href="#" class="list-group-item"><span class="glyphicon glyphicon-briefcase"></span> &nbsp;<?php echo $nama_kategori; ?></a>
 								<a href="#" class="list-group-item"><span class="glyphicon glyphicon-briefcase"></span> &nbsp;<?php echo $nama_sub_kategori; ?></a>
 								<a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> &nbsp;<?php echo $reported; ?></a>
+								<a href="#" class="list-group-item"><span class="glyphicon glyphicon-briefcase"></span> &nbsp;<?php echo $problem_summary; ?></a>
+								<a href="#" class="list-group-item"><span class="glyphicon glyphicon-briefcase"></span> &nbsp;<?php echo $problem_detail; ?></a>
 							</div>
 
 							<div class="row">
+
+								<div class="panel panel-danger">
+									<div class="panel-heading">SYSTEM TRACKING TICKET</div>
+									<div class="panel-body">
+
+										<table class="table table-condensed">
+											<tr>
+												<th>NO</th>
+												<th>TANGGAL</th>
+												<th>STATUS</th>
+												<!-- <th>SUBJECT</th> -->
+												<th>DESKRIPSI</th>
+												<th>OLEH</th>
+											</tr>
+
+											<?php $no = 0;
+											foreach ($data_trackingticket as $row) : $no++; ?>
+												<tr>
+													<td><?php echo $no; ?></td>
+													<td><?php echo $row->tanggal; ?></td>
+													<td><?php echo $row->status; ?></td>
+													<td><?php echo $row->deskripsi; ?></td>
+													<!-- <td><?php echo $row->problem_summary; ?></td>
+													<td><?php echo $row->problem_detail; ?></td> -->
+													<td><?php echo $row->nama; ?></td>
+												</tr>
+											<?php endforeach; ?>
+										</table>
+
+									</div>
+								</div>
 
 								<div class="col-lg-6">
 
