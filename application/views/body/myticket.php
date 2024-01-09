@@ -16,7 +16,7 @@
 						<use xlink:href="#stroked-open-letter" />
 				</svg>
 				<a href="#" style="text-decoration:none">List Tiket</a> <br><br>
-				<a href="<?php echo base_url(); ?>myticket/pdfmyticket" class="btn btn-danger" target="_blank">Cetak laporan</a>
+				<a href="<?php echo base_url(); ?>myticket/pdfmyticket" class="btn btn-danger" target="_blank">Cetak List Tiket</a>
 			</div>
 			<div class="panel-body"></div>
 			<div class="panel-body">

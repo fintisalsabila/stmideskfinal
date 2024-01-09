@@ -6,7 +6,7 @@
 			<li class="active"><a href="<?php echo base_url(); ?>home"><svg class="glyph stroked dashboard-dial">
 						<use xlink:href="#stroked-dashboard-dial"></use>
 					</svg> Dashboard</a></li>
-			<li><a href="<?php echo base_url(); ?>barang/barang_list"><svg class="glyph stroked bag">
+			<!--<li><a href="<?php echo base_url(); ?>barang/barang_list"><svg class="glyph stroked bag">
 						<use xlink:href="#stroked-bag"></use>
 			</svg> Data Barang</a></li>
 			<li><a href="<?php echo base_url(); ?>barangmasuk/index"><svg class="glyph stroked bag">
@@ -14,7 +14,7 @@
 			</svg> Barang Masuk</a></li>
 			<li><a href="<?php echo base_url(); ?>barangkeluar/index"><svg class="glyph stroked bag">
 						<use xlink:href="#stroked-bag"></use>
-			</svg> Barang Keluar</a></li>
+			</svg> Barang Keluar</a></li>-->
 			<li><a href="<?php echo base_url(); ?>karyawan/karyawan_list"><svg class="glyph stroked calendar">
 						<use xlink:href="#stroked-male-user"></use>
 					</svg> Data Karyawan</a></li>

@@ -22,25 +22,26 @@ class Model_app extends CI_Model
         return $query->result();
     }
 
-
+/**Generates a unique ticket code based on the maximum existing ticket ID.**/
     public function getkodeticket()
-    {
-        $query = $this->db->query("select max(id_ticket) as max_code FROM ticket");
+{
+    $query = $this->db->query("SELECT MAX(id_ticket) AS max_code FROM ticket");
 
-        $row = $query->row_array();
+    $row = $query->row_array();
 
-        $max_id = $row['max_code'];
-        $max_fix = (int) substr($max_id, 9, 4);
+    $max_id = $row['max_code'];
+    $max_fix = (int) substr($max_id, 9, 4);
 
-        $max_nik = $max_fix + 1;
+    $max_nik = $max_fix + 1;
 
-        $tanggal = $time = date("d");
-        $bulan = $time = date("m");
-        $tahun = $time = date("Y");
+    $tanggal = date("d");
+    $bulan = date("m");
+    $tahun = date("Y");
 
-        $nip = "T" . $tahun . $bulan . $tanggal . sprintf("%04s", $max_nik);
-        return $nip;
-    }
+    $nip = "T" . $tahun . $bulan . $tanggal . sprintf("%04s", $max_nik);
+    return $nip;
+}
+
 
     public function getkodekaryawan()
     {
@@ -94,27 +95,27 @@ class Model_app extends CI_Model
     }
 
     public function datakaryawan()
-    {
-        $query = $this->db->query('SELECT A.nama, A.nip, A.alamat, A.jk, C.nama_bagian_dept, B.nama_jabatan, D.nama_dept
-                               FROM karyawan A LEFT JOIN jabatan B ON B.id_jabatan = A.id_jabatan
-                                               LEFT JOIN bagian_departemen C ON C.id_bagian_dept = A.id_bagian_dept
-                                               LEFT JOIN departemen D ON D.id_dept = C.id_dept');
-        return $query->result();
-    }
+{
+    $query = $this->db->query('SELECT A.nama, A.nip, A.alamat, A.jk, C.nama_bagian_dept, B.nama_jabatan, D.nama_dept
+                           FROM karyawan A LEFT JOIN jabatan B ON B.id_jabatan = A.id_jabatan
+                                           LEFT JOIN bagian_departemen C ON C.id_bagian_dept = A.id_bagian_dept
+                                           LEFT JOIN departemen D ON D.id_dept = C.id_dept');
+    return $query->result();
+}
 
-    public function datalist_ticket()
-    {
-
-        $query = $this->db->query("SELECT D.nama, F.nama_dept, A.status, A.id_ticket, A.tanggal, A.foto, B.nama_sub_kategori, C.nama_kategori
-                                   FROM ticket A 
-                                   LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
-                                   LEFT JOIN kategori C ON C.id_kategori = B.id_kategori
-                                   LEFT JOIN karyawan D ON D.nip = A.reported
-                                   LEFT JOIN bagian_departemen E ON E.id_bagian_dept = D.id_bagian_dept
-                                   LEFT JOIN departemen F ON F.id_dept = E.id_dept
-                                   WHERE A.status IN (2,3,4,5,6)");
-        return $query->result();
-    }
+public function datalist_ticket()
+{
+    $query = $this->db->query("SELECT D.nama, F.nama_dept, A.status, A.id_ticket, A.tanggal, A.foto, B.nama_sub_kategori, C.nama_kategori
+                               FROM ticket A 
+                               LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
+                               LEFT JOIN kategori C ON C.id_kategori = B.id_kategori
+                               LEFT JOIN karyawan D ON D.nip = A.reported
+                               LEFT JOIN bagian_departemen E ON E.id_bagian_dept = D.id_bagian_dept
+                               LEFT JOIN departemen F ON F.id_dept = E.id_dept
+                               WHERE A.status IN (2,3,4,5,6)
+                               ORDER BY A.tanggal DESC");
+    return $query->result();
+}
 
     public function data_trackingticket($id)
     {
@@ -122,7 +123,8 @@ class Model_app extends CI_Model
         $query = $this->db->query("SELECT A.tanggal, A.status, A.deskripsi, B.nama
                                    FROM tracking A 
                                    LEFT JOIN karyawan B ON B.nip = A.id_user
-                                   WHERE A.id_ticket ='$id'");
+                                   WHERE A.id_ticket ='$id'
+                                   ORDER BY A.tanggal DESC");
         return $query->result();
 
         // $query = $this->db->query("SELECT A.tanggal, A.status, A.deskripsi, B.nama, C.*
@@ -145,43 +147,45 @@ class Model_app extends CI_Model
     }
 
     public function datamyticket($id)
-    {
-        $query = $this->db->query("SELECT A.progress, A.tanggal_proses, A.tanggal_solved, A.id_teknisi, D.feedback, A.status, A.id_ticket, A.tanggal, A.foto, B.nama_sub_kategori, C.nama_kategori
-                                   FROM ticket A 
-                                   LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
-                                   LEFT JOIN kategori C ON C.id_kategori = B.id_kategori 
-                                   LEFT JOIN history_feedback D ON D.id_ticket = A.id_ticket
-                                   WHERE A.reported = '$id' ");
-        return $query->result();
-    }
-
-
+{
+    $query = $this->db->query("SELECT A.progress, A.tanggal_proses, A.tanggal_solved, A.id_teknisi, D.feedback, A.status, A.id_ticket, A.tanggal, A.foto, B.nama_sub_kategori, C.nama_kategori
+                               FROM ticket A 
+                               LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
+                               LEFT JOIN kategori C ON C.id_kategori = B.id_kategori 
+                               LEFT JOIN history_feedback D ON D.id_ticket = A.id_ticket
+                               WHERE A.reported = '$id'
+                               ORDER BY A.tanggal DESC");
+    return $query->result();
+}
 
     public function datamyassignment($id)
     {
         $query = $this->db->query("SELECT A.progress, A.status, A.id_ticket, A.reported, A.tanggal, A.foto, B.nama_sub_kategori, C.nama_kategori
-                                   FROM ticket A 
-                                   LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
-                                   LEFT JOIN kategori C ON C.id_kategori = B.id_kategori
-                                   LEFT JOIN karyawan D ON D.nip = A.reported
-                                   LEFT JOIN teknisi E ON E.id_teknisi = A.id_teknisi
-                                   LEFT JOIN karyawan F ON F.nip = E.nip
-                                   WHERE F.nip = '$id'
-                                   AND A.status IN (3,4,5,6)
-                                   ");
+                                FROM ticket A 
+                                LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
+                                LEFT JOIN kategori C ON C.id_kategori = B.id_kategori
+                                LEFT JOIN karyawan D ON D.nip = A.reported
+                                LEFT JOIN teknisi E ON E.id_teknisi = A.id_teknisi
+                                LEFT JOIN karyawan F ON F.nip = E.nip
+                                WHERE F.nip = '$id'
+                                AND A.status IN (3,4,5,6)
+                                ORDER BY A.tanggal DESC");
         return $query->result();
     }
 
+
     public function dataapproval($id)
-    {
-        $query = $this->db->query("SELECT A.status, D.nama ,A.status, A.id_ticket, A.tanggal, B.nama_sub_kategori, C.nama_kategori 
+{
+    $query = $this->db->query("SELECT A.status, D.nama, A.status, A.id_ticket, A.tanggal, B.nama_sub_kategori, C.nama_kategori 
         FROM ticket A 
         LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori 
         LEFT JOIN kategori C ON C.id_kategori = B.id_kategori
         LEFT JOIN karyawan D ON D.nip = A.reported 
-        LEFT JOIN bagian_departemen E ON E.id_bagian_dept = D.id_bagian_dept WHERE E.id_dept = $id AND A.status = 1 OR  A.status= 0");
-        return $query->result();
-    }
+        LEFT JOIN bagian_departemen E ON E.id_bagian_dept = D.id_bagian_dept 
+        WHERE E.id_dept = $id AND A.status IN (1, 0) 
+        ORDER BY A.tanggal DESC");
+    return $query->result();
+}
 
     public function datadepartemen()
     {
@@ -240,41 +244,43 @@ class Model_app extends CI_Model
         return $query->result();
     }
     public function datateknisi()
-    {
-        $query = $this->db->query('SELECT A.point, A.id_teknisi, B.nama, B.jk, C.nama_kategori, A.status, A.point FROM teknisi A 
+{
+    $query = $this->db->query('SELECT A.point, A.id_teknisi, B.nama, B.jk, C.nama_kategori, A.status, A.point FROM teknisi A 
                                 LEFT JOIN karyawan B ON B.nip = A.nip
-                                LEFT JOIN kategori C ON C.id_kategori = A.id_kategori
-                                
-                                 ');
-        return $query->result();
-    }
+                                LEFT JOIN kategori C ON C.id_kategori = A.id_kategori');
+
+    return $query->result();
+}
+
 
 
     public function datareportteknisi($id)
-    {
-        $query = $this->db->query(
-            "SELECT A.progress, A.tanggal_proses, A.status, A.problem_summary, B.nama, D.nama_kategori, F.nama_dept  FROM ticket A 
-                                LEFT JOIN karyawan B ON B.nip = A.reported
-                                LEFT JOIN sub_kategori C ON C.id_sub_kategori = A.id_sub_kategori
-                                LEFT JOIN kategori D ON D.id_kategori = C.id_kategori
-                                LEFT JOIN bagian_departemen E ON E.id_bagian_dept = B.id_bagian_dept
-                                LEFT JOIN departemen F ON F.id_dept = E.id_dept
-                                WHERE id_teknisi = '$id'"
-        );
-        return $query->result();
-    }
+{
+    $query = $this->db->query(
+        "SELECT A.progress, A.tanggal_proses, A.status, A.problem_summary, B.nama, D.nama_kategori, F.nama_dept FROM ticket A 
+        LEFT JOIN karyawan B ON B.nip = A.reported
+        LEFT JOIN sub_kategori C ON C.id_sub_kategori = A.id_sub_kategori
+        LEFT JOIN kategori D ON D.id_kategori = C.id_kategori
+        LEFT JOIN bagian_departemen E ON E.id_bagian_dept = B.id_bagian_dept
+        LEFT JOIN departemen F ON F.id_dept = E.id_dept
+        WHERE id_teknisi = '$id'
+        ORDER BY A.tanggal_proses DESC"
+    );
+    return $query->result();
+}
+
 
 
     public function datauser()
-    {
-        $query = $this->db->query('SELECT A.username, A.level, A.id_user, B.nip, B.nama, A.password, C.id_dept, D.nama_dept 
-            FROM user A LEFT JOIN karyawan B ON B.nip = A.username 
-            LEFT JOIN bagian_departemen C ON C.id_bagian_dept = B.id_bagian_dept 
-            LEFT JOIN departemen D ON D.id_dept = C.id_dept
-                                 ');
+{
+    $query = $this->db->query('SELECT A.username, A.level, A.id_user, B.nip, B.nama, A.password, C.id_dept, D.nama_dept 
+        FROM user A LEFT JOIN karyawan B ON B.nip = A.username 
+        LEFT JOIN bagian_departemen C ON C.id_bagian_dept = B.id_bagian_dept 
+        LEFT JOIN departemen D ON D.id_dept = C.id_dept');
 
-        return $query->result();
-    }
+    return $query->result();
+}
+
 
     public function datakategori()
     {
@@ -283,15 +289,17 @@ class Model_app extends CI_Model
     }
 
     public function dataassigment($id)
-    {
-        $query = $this->db->query('SELECT A.status, D.nama, C.id_kategori, A.id_ticket, A.tanggal, B.nama_sub_kategori, C.nama_kategori
-                FROM ticket A 
-                LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
-                LEFT JOIN kategori C ON C.id_kategori = B.id_kategori 
-                LEFT JOIN karyawan D ON D.nip = A.reported 
-                WHERE A.id_teknisi = "$id"');
-        return $query->result();
-    }
+{
+    $query = $this->db->query("SELECT A.status, D.nama, C.id_kategori, A.id_ticket, A.tanggal, B.nama_sub_kategori, C.nama_kategori
+            FROM ticket A 
+            LEFT JOIN sub_kategori B ON B.id_sub_kategori = A.id_sub_kategori
+            LEFT JOIN kategori C ON C.id_kategori = B.id_kategori 
+            LEFT JOIN karyawan D ON D.nip = A.reported 
+            WHERE A.id_teknisi = '$id'
+            ORDER BY A.tanggal DESC");
+    return $query->result();
+}
+
 
     public function datasubkategori()
     {

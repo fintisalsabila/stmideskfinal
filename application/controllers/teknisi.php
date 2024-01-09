@@ -254,6 +254,28 @@ function __construct(){
 
  }
 
+ public function pdf_ajukan_barang()
+    {
 
+        $id = trim($this->session->userdata('id_user'));
+
+        $datamyticket = $this->model_app->datamyticket($id);
+        $data['datamyticket'] = $datamyticket;
+
+
+        ob_start();
+        $content = $this->load->view('body/pdf_ajukan_barang', $data);
+        $content = ob_get_clean();
+        $this->load->library('html2pdf');
+        try {
+            $html2pdf = new HTML2PDF('L', 'A4', 'en');
+            $html2pdf->pdf->SetDisplayMode('fullpage');
+            $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
+            $html2pdf->Output('Report_ppic.pdf');
+        } catch (HTML2PDF_exception $e) {
+            echo $e;
+            exit;
+        }
+    }
     
 }

@@ -54,7 +54,7 @@
           </a>
 
           <a href="#" class="list-group-item">
-            <b>TANGAL TICKET : <?php echo $tanggal; ?></b>
+            <b>TANGGAL TICKET : <?php echo $tanggal; ?></b>
           </a>
 
 
@@ -63,7 +63,7 @@
             <a href="#" class="list-group-item">
               <b>
 
-                TANGAL SOLVED : <span class="label label-primary"><?php echo $tanggal; ?></span></b>
+                TANGGAL SOLVED : <span class="label label-primary"><?php echo $tanggal; ?></span></b>
 
             </a>
 
@@ -114,7 +114,13 @@
         </div>
 
 
-
+        <div class="row">
+    <div class="col-lg-12">
+        <a href="<?php echo base_url(); ?>progress_teknisi/pdf_ajukan_barang.php" class="btn btn-primary" target="_blank">
+            Surat Pengajuan
+        </a>
+    </div>
+</div>
 
 
       </div>

@@ -17,21 +17,19 @@ Proyek ini adalah aplikasi web yang dikembangkan oleh kelompok java menggunakan 
     - Proses pembayaran yang aman dan nyaman.
 2. **Pengadaan Barang:**
     - Pemesanan barang untuk kebutuhan bisnis atau acara.
-    - Monitoring status pengadaan dari pemesanan hingga pengiriman.
-    - Manajemen katalog barang dengan deskripsi dan harga.
 3. **Autentikasi Pengguna:**
     - Sistem login dan registrasi pengguna.
     - Pengaturan profil pengguna dan manajemen kata sandi.
 4. **Manajemen Admin:**
-    - Manajemen pengguna dan peran (admin, pengguna biasa).
+    - Manajemen pengguna dan peran (Admin, Kepala Unit, Kasubag, Teknisi, Manajemen, Customer).
     - Pantauan aktivitas pengguna dan laporan penjualan/pengadaan.
 
 ## Instalasi
 1. Clone repositori ini ke dalam direktori web server Anda.
    ```bash
-   git clone https://github.com/fintisalsabila/stmideskFinal
+   git clone https://github.com/fintisalsabila/stmideskfinal
    ```
-2. Buat database dan atur konfigurasi database di file `application/config/database.php`.
+2. Buat database dan atur konfigurasi database di file `application/config/perusahaan.php`.
 3. Lakukan migrasi database untuk membuat tabel yang diperlukan.
    ```bash
    php index.php migrate

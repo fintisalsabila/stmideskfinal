@@ -160,6 +160,7 @@
 									</div>
 									<img id="output" src="#" alt="Preview" style="max-width: 40%; height: auto; display: none;">
 								</div>
+								
 							</div>
 
 

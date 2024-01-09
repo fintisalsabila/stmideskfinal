@@ -71,8 +71,8 @@
 								<td data-field="id">
 									<?php
 									if ($row->status == 3) { ?>
-										<a class="ubah btn btn-success btn-xs" href="<?php echo base_url(); ?>myassignment/terima/<?php echo $row->id_ticket; ?>"><span class="glyphicon glyphicon-thumbs-up"></span></a>
-										<a class="ubah btn btn-danger btn-xs" href="<?php echo base_url(); ?>myassignment/pending/<?php echo $row->id_ticket; ?>"><span class="glyphicon glyphicon-minus-sign"></span></a>
+										<a class="ubah btn btn-success btn-xs" href="<?php echo base_url(); ?>myassignment/terima/<?php echo $row->id_ticket; ?>"><span class="glyphicon glyphicon-thumbs-up"></span> Terima</a>
+										<a class="ubah btn btn-danger btn-xs" href="<?php echo base_url(); ?>myassignment/pending/<?php echo $row->id_ticket; ?>"><span class="glyphicon glyphicon-minus-sign"></span> Tolak</a>
 									<?php } else if ($row->status == 5) { ?>
 										<a class="ubah btn btn-success btn-xs" href="<?php echo base_url(); ?>myassignment/terima/<?php echo $row->id_ticket; ?>"><span class="glyphicon glyphicon-thumbs-up"></span></a>
 									<?php } ?>

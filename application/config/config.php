@@ -359,6 +359,8 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+$autoload['libraries'] = array('database', 'pdf'); // Add 'pdf' to the array
+
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

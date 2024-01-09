@@ -22,7 +22,7 @@
 						        <th data-field="id" data-sortable="true">Tanggal</th>
 						        <th data-field="subjecte" data-sortable="true">Subject</th>						        
 						        <th data-field="sudsadsctd" data-sortable="true">Pesan</th>
-						        <th data-field="subjectc" data-sortable="true">By</th>
+						        <th data-field="subjectc" data-sortable="true">Oleh</th>
 						        <th>Aksi</th>
 						    </tr>
                             </thead>
