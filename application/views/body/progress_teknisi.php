@@ -114,13 +114,13 @@
         </div>
 
 
-        <div class="row">
+        <!--<div class="row">
     <div class="col-lg-12">
         <a href="<?php echo base_url(); ?>progress_teknisi/pdf_ajukan_barang.php" class="btn btn-primary" target="_blank">
             Surat Pengajuan
         </a>
     </div>
-</div>
+</div>-->
 
 
       </div>

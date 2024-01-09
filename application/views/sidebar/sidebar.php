@@ -48,12 +48,12 @@
 			<li><a href="<?php echo base_url(); ?>myassignment/myassignment_list"><svg class="glyph stroked clipboard with paper">
 						<use xlink:href="#stroked-clipboard-with-paper" />
 					</svg> Task & ToDoList</a></li>
-			<li><a href="<?php echo base_url(); ?>barangmasuk/index"><svg class="glyph stroked calendar">
+			<!--<li><a href="<?php echo base_url(); ?>barangmasuk/index"><svg class="glyph stroked calendar">
 						<use xlink:href="#stroked-male-user"></use>
 			</svg> Barang Masuk</a></li>
 			<li><a href="<?php echo base_url(); ?>barangkeluar/index"><svg class="glyph stroked calendar">
 						<use xlink:href="#stroked-male-user"></use>
-			</svg> Barang Keluar</a></li>
+			</svg> Barang Keluar</a></li>-->
 			<li><a href="<?php echo base_url(); ?>informasi_view"><svg class="glyph stroked sound on">
 						<use xlink:href="#stroked-sound-on" />
 					</svg> Evaluasi Teknisi</a></li>

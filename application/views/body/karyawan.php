@@ -26,8 +26,8 @@
 						        <th data-field="nama" data-sortable="true">Nama</th>
 						        <th data-field="alamat" data-sortable="true">Alamat</th>
 						        <th data-field="jenis_kelamin" data-sortable="true">Jenis Kelamin</th>
-						        <th data-field="departemen" data-sortable="true">Unit</th>
-						        <th data-field="bagian" data-sortable="true">Bagian Unit</th>
+						        <th data-field="departemen" data-sortable="true">Prodi</th>
+						        <th data-field="bagian" data-sortable="true">Bagian Prodi</th>
 						        <th data-field="jabatan" data-sortable="true">Jabatan</th>
 						        <th>Aksi</th>
 						    </tr>
