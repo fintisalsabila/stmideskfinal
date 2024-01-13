@@ -27,18 +27,13 @@
 
 									<?php if ($flag == "edit") { ?>
 										<div class="form-group">
-											<label>Level</label>
-											<?php echo form_dropdown('id_level', $dd_level, $id_level, ' id="id_level" required class="form-control"'); ?>
-										</div>
-										<div class="form-group">
-											<label>Password</label>
-											<input type="text" class="form-control" name="password">
-											<code>Kosongkan Jika tidak ingin mengubah password</code>
-										</div>
-									<?php } else { ?>
-										<div class="form-group">
 											<label>Nama Karyawan</label>
 											<?php echo form_dropdown('id_karyawan', $dd_karyawan, $id_karyawan, ' id="id_karyawan" required class="form-control"'); ?>
+										</div>
+
+										<div class="form-group">
+											<label>Level</label>
+											<?php echo form_dropdown('id_level', $dd_level, $id_level, ' id="id_level" required class="form-control"'); ?>
 										</div>
 
 										<div class="form-group">
