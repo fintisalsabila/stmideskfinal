@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--GATAU STYLE NYA GABISA CENTER UDAH NYOBA CODING 5 JAM TETEP STUCK-->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>LIST PRGOGRES TIKET</title>

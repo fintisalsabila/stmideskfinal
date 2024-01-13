@@ -78,8 +78,8 @@
 								</td>
 								<td>
 									<?php if ($row->status == 6 and $row->feedback == "") { ?>
-										<a class="ubah btn btn-success btn-xs" href="<?php echo base_url(); ?>myticket/feedback_yes/<?php echo $row->id_ticket; ?>/<?php echo $row->id_teknisi; ?>"><span class="glyphicon glyphicon-thumbs-up"></span></a>
-										<a title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="<?php echo base_url(); ?>myticket/feedback_no/<?php echo $row->id_ticket; ?>/<?php echo $row->id_teknisi; ?>"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+										<a class="ubah btn btn-success btn-xs" href="<?php echo base_url(); ?>myticket/feedback_yes/<?php echo $row->id_ticket; ?>/<?php echo $row->id_teknisi; ?>"><span class="glyphicon glyphicon-thumbs-up"></span> Puas</a>
+										<a title="Hapus Kontak" class="hapus btn btn-danger btn-xs" href="<?php echo base_url(); ?>myticket/feedback_no/<?php echo $row->id_ticket; ?>/<?php echo $row->id_teknisi; ?>"><span class="glyphicon glyphicon-thumbs-down"></span> Tidak Puas</a>
 									<?php } else if ($row->status == 6 and  $row->feedback == 1) {
 										echo "ANDA MEMBERIKAN FEEDBACK POSITIF";
 									} else if ($row->status == 6 and $row->feedback == 0) {

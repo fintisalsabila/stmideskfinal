@@ -37,6 +37,15 @@ Proyek ini adalah aplikasi web yang dikembangkan oleh kelompok java menggunakan 
 4. Atur konfigurasi email di file `application/config/email.php` jika ingin menggunakan fitur notifikasi.
 5. Buka aplikasi melalui web browser dan lakukan registrasi untuk mendapatkan akses.
 
+## Username dan Password
+K0001 = admin = ADMIN
+K0009 = 123456 = customer 
+K0010 = DEWI = Teknisi
+K0002 = 123 = KASUBAG
+K0005 = 123 = KEPALA UNIT
+K0003 = 123 = MANAJEMEN
+
+
 ## Kontribusi
 Jika Anda ingin berkontribusi pada pengembangan proyek ini, silakan buat *pull request* atau laporkan *issues* melalui GitHub.
 

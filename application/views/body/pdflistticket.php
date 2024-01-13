@@ -47,6 +47,17 @@
         .status-4 { color: purple; }
         .status-5 { color: brown; }
         .status-6 { color: green; }
+
+        /* Responsive Styles */
+        @media print {
+            body {
+                padding: 10px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 

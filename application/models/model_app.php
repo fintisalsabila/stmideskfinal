@@ -99,7 +99,9 @@ class Model_app extends CI_Model
     $query = $this->db->query('SELECT A.nama, A.nip, A.alamat, A.jk, C.nama_bagian_dept, B.nama_jabatan, D.nama_dept
                            FROM karyawan A LEFT JOIN jabatan B ON B.id_jabatan = A.id_jabatan
                                            LEFT JOIN bagian_departemen C ON C.id_bagian_dept = A.id_bagian_dept
-                                           LEFT JOIN departemen D ON D.id_dept = C.id_dept');
+                                           LEFT JOIN departemen D ON D.id_dept = C.id_dept
+                           ORDER BY A.nip DESC');  // Add this line to order by nip in descending order
+
     return $query->result();
 }
 
@@ -117,24 +119,23 @@ public function datalist_ticket()
     return $query->result();
 }
 
-    public function data_trackingticket($id)
-    {
+public function data_trackingticket($id)
+{
+    $query = $this->db->query("SELECT A.tanggal, A.status, A.deskripsi, B.nama
+                               FROM tracking A 
+                               LEFT JOIN karyawan B ON B.nip = A.id_user
+                               WHERE A.id_ticket ='$id'
+                               ORDER BY A.tanggal DESC");
 
-        $query = $this->db->query("SELECT A.tanggal, A.status, A.deskripsi, B.nama
-                                   FROM tracking A 
-                                   LEFT JOIN karyawan B ON B.nip = A.id_user
-                                   WHERE A.id_ticket ='$id'
-                                   ORDER BY A.tanggal DESC");
-        return $query->result();
-
-        // $query = $this->db->query("SELECT A.tanggal, A.status, A.deskripsi, B.nama, C.*
-        //                            FROM tracking A 
-        //                            LEFT JOIN karyawan B ON B.nip = A.id_user
-        //                            LEFT JOIN ticket C ON C.id_ticket = A.id_ticket
-        //                            WHERE A.id_ticket ='$id'");
-        return $query->result();
-    }
-
+    return $query->result();
+    // The following code is unreachable, so it has been removed.
+    // $query = $this->db->query("SELECT A.tanggal, A.status, A.deskripsi, B.nama, C.*
+    //                            FROM tracking A 
+    //                            LEFT JOIN karyawan B ON B.nip = A.id_user
+    //                            LEFT JOIN ticket C ON C.id_ticket = A.id_ticket
+    //                            WHERE A.id_ticket ='$id'");
+    // return $query->result();
+}
 
     public function datainformasi()
     {
@@ -247,12 +248,11 @@ public function datalist_ticket()
 {
     $query = $this->db->query('SELECT A.point, A.id_teknisi, B.nama, B.jk, C.nama_kategori, A.status, A.point FROM teknisi A 
                                 LEFT JOIN karyawan B ON B.nip = A.nip
-                                LEFT JOIN kategori C ON C.id_kategori = A.id_kategori');
+                                LEFT JOIN kategori C ON C.id_kategori = A.id_kategori
+                                ORDER BY A.id_teknisi DESC');  // Add this line to order by id_teknisi in descending order
 
     return $query->result();
 }
-
-
 
     public function datareportteknisi($id)
 {
@@ -269,18 +269,19 @@ public function datalist_ticket()
     return $query->result();
 }
 
-
-
-    public function datauser()
+public function datauser()
 {
-    $query = $this->db->query('SELECT A.username, A.level, A.id_user, B.nip, B.nama, A.password, C.id_dept, D.nama_dept 
-        FROM user A LEFT JOIN karyawan B ON B.nip = A.username 
+    $query = $this->db->query('
+        SELECT A.username, A.level, A.id_user, B.nip, B.nama, A.password, C.id_dept, D.nama_dept 
+        FROM user A 
+        LEFT JOIN karyawan B ON B.nip = A.username 
         LEFT JOIN bagian_departemen C ON C.id_bagian_dept = B.id_bagian_dept 
-        LEFT JOIN departemen D ON D.id_dept = C.id_dept');
+        LEFT JOIN departemen D ON D.id_dept = C.id_dept
+        ORDER BY A.username DESC
+    ');
 
     return $query->result();
 }
-
 
     public function datakategori()
     {
