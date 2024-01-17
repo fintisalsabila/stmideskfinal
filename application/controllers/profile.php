@@ -83,6 +83,8 @@ class profile extends CI_Controller
         $this->load->view('template', $data);
     }
 
+
+    //UBAH KATA SANDI TOLONG
     function change_password()
     {
         $data['header'] = "header/header";
@@ -135,13 +137,13 @@ class profile extends CI_Controller
         if ($this->db->trans_status() === FALSE) {
             $this->session->set_flashdata("msg", "<div class='alert bg-danger' role='alert'>
 			    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-			    <svg class='glyph stroked empty-message'><use xlink:href='#stroked-empty-message'></use></svg> gagal ubah password.
+			    <svg class='glyph stroked empty-message'><use xlink:href='#stroked-empty-message'></use></svg> gagal ubah kata sandi.
 			    </div>");
             redirect('profile/change_password');
         } else {
             $this->session->set_flashdata("msg", "<div class='alert bg-success' role='alert'>
 			    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-			    <svg class='glyph stroked empty-message'><use xlink:href='#stroked-empty-message'></use></svg> berhasil ubah password.
+			    <svg class='glyph stroked empty-message'><use xlink:href='#stroked-empty-message'></use></svg> berhasil ubah kata sandi.
 			    </div>");
             redirect('profile/change_password');
         }

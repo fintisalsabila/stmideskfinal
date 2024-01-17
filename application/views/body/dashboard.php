@@ -106,58 +106,60 @@
 			</div>
 		</div><!--/.row-->
 		<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<a href="<?php echo base_url(); ?>myticket/feedback_filterdone">
-					<div class="panel panel-default">
-						<div class="panel-body easypiechart-panel">
-							<h4>Tiket Selesai</h4>
-							<div class="easypiechart" id="easypiechart-blue" data-percent="<?php echo $jml_ticket_solved; ?>"><span class="percent"><?php echo ceil($jml_ticket_solved); ?> %</span>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <a href="<?php echo base_url(); ?>myticket/feedback_filterdone" class="panel-link">
+            <div class="panel panel-default">
+                <div class="panel-body easypiechart-panel">
+                    <h4>Tiket Sudah <br>Selesai Dikerjakan</h4>
+                    <div class="easypiechart" id="easypiechart-blue" data-percent="<?php echo $jml_ticket_solved; ?>">
+                        <span class="percent"><?php echo ceil($jml_ticket_solved); ?> %</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 
-			<div class="col-xs-6 col-md-3">
-				<a href="<?php echo base_url(); ?>myticket/feedback_filterwaitkunit" class="panel-link">
-					<div class="panel panel-default">
-						<div class="panel-body easypiechart-panel">
-							<h4>Tiket Menunggu <br> Persetujuan Kepala Unit</h4>
-							<div class="easypiechart" id="easypiechart-orange" data-percent="<?php echo $jml_ticket_process; ?>"><span class="percent"><?php echo ceil($jml_ticket_process); ?> %</span>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <a href="<?php echo base_url(); ?>myticket/feedback_filterwaitkunit" class="panel-link">
+            <div class="panel panel-default">
+                <div class="panel-body easypiechart-panel">
+                    <h4>Tiket Menunggu <br> Persetujuan Kepala Unit</h4>
+                    <div class="easypiechart" id="easypiechart-orange" data-percent="<?php echo $jml_ticket_process; ?>">
+                        <span class="percent"><?php echo ceil($jml_ticket_process); ?> %</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 
-			<div class="col-xs-6 col-md-3">
-				<a href="<?php echo base_url(); ?>myticket/feedback_filterWaitKasubag" class="panel-link">
-					<div class="panel panel-default">
-						<div class="panel-body easypiechart-panel">
-							<h4>Tiket Menunggu <br> Persetujuan Kasubag</h4>
-							<div class="easypiechart" id="easypiechart-teal" data-percent="<?php echo $jml_ticket_app_int; ?>">
-								<span class="percent"><?php echo ceil($jml_ticket_app_int); ?> %</span>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <a href="<?php echo base_url(); ?>myticket/feedback_filterWaitKasubag" class="panel-link">
+            <div class="panel panel-default">
+                <div class="panel-body easypiechart-panel">
+                    <h4>Tiket Menunggu <br> Persetujuan Kasubag</h4>
+                    <div class="easypiechart" id="easypiechart-teal" data-percent="<?php echo $jml_ticket_app_int; ?>">
+                        <span class="percent"><?php echo ceil($jml_ticket_app_int); ?> %</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 
-			<div class="col-xs-6 col-md-3">
-				<a href="<?php echo base_url(); ?>myticket/feedback_filterprogress" class="panel-link">
-					<div class="panel panel-default">
-						<div class="panel-body easypiechart-panel">
-							<h4>Tiket Sedang <br> Proses Pengerjaan</h4>
-							<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $jml_ticket_app_tek; ?>"><span class="percent"><?php echo ceil($jml_ticket_app_tek); ?>%</span>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <a href="<?php echo base_url(); ?>myticket/feedback_filterprogress" class="panel-link">
+            <div class="panel panel-default">
+                <div class="panel-body easypiechart-panel">
+                    <h4>Tiket Sedang <br> Dalam Proses Pengerjaan</h4>
+                    <div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $jml_ticket_app_tek; ?>">
+                        <span class="percent"><?php echo ceil($jml_ticket_app_tek); ?>%</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
 
-
-
-		</div><!--/.row-->
+<!--/.row-->
 
 
 		<div class="row">

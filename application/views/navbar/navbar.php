@@ -22,20 +22,20 @@
                         <li><a href="<?php echo base_url(); ?>profile/view">
                                 <svg class="glyph stroked male-user">
                                     <use xlink:href="#stroked-male-user"></use>
-                                </svg> Profile
+                                </svg> Profil
                             </a>
                         </li>
                         <li><a href="<?php echo base_url(); ?>profile/change_password">
                                 <svg class="glyph stroked lock">
                                     <use xlink:href="#stroked-lock"></use>
                                 </svg>
-                                Change Password
+                                Ubah Kata Sandi
                             </a>
                         </li>
                         <li><a href="<?php echo base_url(); ?>login/logout">
                                 <svg class="glyph stroked cancel">
                                     <use xlink:href="#stroked-cancel"></use>
-                                </svg> Logout
+                                </svg> Keluar
                             </a>
                         </li>
                     </ul>

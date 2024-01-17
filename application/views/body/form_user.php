@@ -35,7 +35,7 @@
                             <div class="form-group">
                                 <label>Password</label>
                                 <input type="text" class="form-control" name="password">
-                                <code>Kosongkan Jika tidak ingin mengubah password</code>
+                                <code>Kosongkan Jika tidak ingin mengubah kata sandi</code>
                             </div>
                         <?php } else { ?>
                             <div class="form-group">

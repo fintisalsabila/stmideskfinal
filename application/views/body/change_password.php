@@ -3,7 +3,7 @@
         <li><a href="#"><svg class="glyph stroked home">
                     <use xlink:href="#stroked-home"></use>
                 </svg></a></li>
-        <li class="active">Change Password</li>
+        <li class="active">Ubah Kata Sandi</li>
     </ol>
 </div><!--/.row-->
 
@@ -17,6 +17,12 @@
             <div class="panel-heading clearfix">Form</div>
             <div class="panel-body">
                 <form class="form-horizontal row-border" method="post" action="<?php echo base_url(); ?><?php echo $url; ?>">
+                <div class="form-group">
+                        <label class="col-md-2 control-label" for="old_password">Password Lama</label>
+                        <div class="col-md-10">
+                            <input type="password" name="old_password" class="form-control" required>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label">Password Baru</label>
                         <div class="col-md-10">
